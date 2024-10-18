@@ -14,6 +14,7 @@ require("mason-lspconfig").setup({
     "lua_ls",
     "clangd",
     "pylsp",
+    "jdtls",
   },
 })
 
@@ -30,5 +31,12 @@ require("lspconfig").clangd.setup {
 require("lspconfig").pylsp.setup {
   capabilities = capabilities,
 }
-
+require("lspconfig").jdtls.setup {
+  cmd = { 'java', '-jar', '/path/to/eclipse.jdt.ls/org.eclipse.jdt.ls.core.jar' },
+  settings = {
+      java = {
+          home = '/usr/lib/jvm/java-8-openjdk', -- 指定 JDK 8 路径
+      },
+  },
+}
 
