@@ -50,6 +50,7 @@ return require('packer').startup(function(use)
   use "numToStr/Comment.nvim" -- gcc和gc注释
   use "windwp/nvim-autopairs" -- 自动补全括号
   use "akinsho/bufferline.nvim" -- buffer分割线
+  use "scalameta/nvim-metals" --Scala语言服务
   use "lewis6991/gitsigns.nvim" -- 左则git提示
   use {
     'nvim-telescope/telescope.nvim',tag = "0.1.8",  -- 文件检索
@@ -62,7 +63,6 @@ use {
   'nvimdev/dashboard-nvim',
   requires = {'nvim-tree/nvim-web-devicons'}
 }
-
 
   if packer_bootstrap then
     require('packer').sync()
