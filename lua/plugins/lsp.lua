@@ -37,6 +37,10 @@ require("lspconfig").jdtls.setup {
       java = {
           home = '/usr/lib/jvm/java-8-openjdk', -- 指定 JDK 8 路径
       },
+      completion = {
+        enabled = true, -- 启用代码补全
+        favoriteStaticMembers = true, -- 允许补全静态成员
+      },
   },
 }
 
