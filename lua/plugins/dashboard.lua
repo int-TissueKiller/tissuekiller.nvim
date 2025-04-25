@@ -1,10 +1,19 @@
-require("dashboard").setup({
-    theme = 'hyper',
-    config = {
-        week_header = {
+return{
+    "nvimdev/dashboard-nvim",
+    event = "VimEnter",
+    lazy = true,
+    dependencies = {
+      {"nvim-tree/nvim-web-devicons", lazy = true}, -- 图标按需加载
+    },
+    config = function ()
+      require("dashboard").setup({
+        theme = 'hyper',
+        config = {
+          week_header = {
             enable = false,
-        },
-        header = {
+          },
+--[[
+          header = {
      '',
      '  ⣇⣿⠘⣿⣿⣿⡿⡿⣟⣟⢟⢟⢝⠵⡝⣿⡿⢂⣼⣿⣷⣌⠩⡫⡻⣝⠹⢿⣿⣷ ',
      '  ⡆⣿⣆⠱⣝⡵⣝⢅⠙⣿⢕⢕⢕⢕⢝⣥⢒⠅⣿⣿⣿⡿⣳⣌⠪⡪⣡⢑⢝⣿ ',
@@ -21,6 +30,16 @@ require("dashboard").setup({
      '  ⡝⡵⡈⢟⢕⢕⢕⢕⣵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿⣿⠿⠋⣀⣈⠙ ',
      '  ⡝⡵⡕⡀⠑⠳⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⢉⡠⡲⡫⡪⡪⡣ ',
      ''},
+     ]]
+        header = {
+     '',
+     '    ████████╗██╗  ██╗     ███╗   ██╗██╗   ██╗██╗███╗   ███╗',
+     '    ╚══██╔══╝██║ ██╔╝     ████╗  ██║██║   ██║██║████╗ ████║',
+     '       ██║   █████╔╝█████╗██╔██╗ ██║██║   ██║██║██╔████╔██║',
+     '       ██║   ██╔═██╗╚════╝██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║',
+     '       ██║   ██║  ██╗     ██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║',
+     '       ╚═╝   ╚═╝  ╚═╝     ╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝',
+     ''},
         footer = {
             os.date("%Y-%m-%d %H:%M:%S"),  -- 显示当前日期和时间
         },
@@ -28,5 +47,8 @@ require("dashboard").setup({
             { desc = 'Recent Files', group = '@property', action = 'Telescope oldfiles', key = 'f' },
             { desc = 'New File', group = 'Label', action = 'enew', key = 'n' },
         },
-    },
-})
+      },
+    })
+    end
+}
+
