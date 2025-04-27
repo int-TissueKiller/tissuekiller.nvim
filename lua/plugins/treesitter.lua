@@ -8,7 +8,7 @@ return{
     config = function()
       require("nvim-treesitter").setup {
         -- 添加不同语言
-        -- ensure_installed = {"bash", "c", "cpp", "json", "lua", "python", "java"}, -- one of "all" or a list of languages
+        --ensure_installed = {"bash", "c", "cpp", "json", "lua", "python", "java"}, -- one of "all" or a list of languages
         highlight = { enable = true },
         indent = { enable = true, disable = { "python" } },
         auto_install = false,
