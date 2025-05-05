@@ -24,7 +24,6 @@ return{
     },
     {
       "neovim/nvim-lspconfig",
-      lazy = true, -- LSP 配置按需加载
       event = "BufReadPost", -- 在打开文件时加载
       config = function()
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
