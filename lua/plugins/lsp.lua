@@ -31,7 +31,7 @@ return {
         -- 定义每个语言服务器的配置
         local servers = {
           lua_ls = {},
-          -- clangd = {},
+          clangd = {},
           pylsp = {},
           -- jdtls = {
           --   cmd = { "java", "-jar", "/path/to/jdtls.jar" },
